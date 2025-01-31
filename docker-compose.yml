@@ -1,8 +1,8 @@
-version: '3.4'
-
 services:
-  algotradingpythonbook:
-    image: algotradingpythonbook
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  algotrading:
+    container_name: algo-trading
+    tty: true
+    stdin_open: true
+    build: .
+    volumes:
+      - .:/code
