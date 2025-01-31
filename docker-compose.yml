@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  algotradingpythonbook:
+    image: algotradingpythonbook
+    build:
+      context: .
+      dockerfile: ./Dockerfile
