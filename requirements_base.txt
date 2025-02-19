@@ -9,4 +9,3 @@ ipython
 jupyter
 requests
 openbb[all]
-openbb-platform-api
