@@ -1,5 +1,7 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
 FROM python:3.10.16-bookworm
+# A versão 3.10 do pytho é compatível com o openbb.
+
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -9,8 +11,8 @@ ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
 COPY requirements.txt .
-RUN pip install --upgrade pip       
-RUN python -m pip install -r requirements.txt
+RUN pip install --upgrade pip && \
+    python -m pip install -r requirements.txt
 
 EXPOSE 6900
 

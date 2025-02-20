@@ -9,3 +9,5 @@ ipython
 jupyter
 requests
 openbb[all]
+pandas_datareader
+tables
