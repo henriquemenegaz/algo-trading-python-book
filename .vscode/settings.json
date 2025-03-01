@@ -1,4 +1,8 @@
 {
     "python.analysis.typeCheckingMode": "basic",
-    "marimo.pythonPath": "${workspaceFolder}/.venv/bin/python"
+    "marimo.pythonPath": "${workspaceFolder}/.venv/bin/python",
+    "ruff.lint.args": [
+        "--src=.",
+        "--src=src"
+    ]
 }

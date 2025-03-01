@@ -1,7 +1,8 @@
-from sys import argv
 import sqlite3
-import pandas as pd
+from sys import argv
+
 import exchange_calendars as xcals
+import pandas as pd
 from openbb import obb
 
 obb.user.preferences.output_type = "dataframe"
