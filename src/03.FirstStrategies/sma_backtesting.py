@@ -7,6 +7,10 @@
 # (c) Dr. Yves J. Hilpisch
 # The Python Quants GmbH
 #
+import marimo as mo
+
+mo.md
+
 import numpy as np
 import pandas as pd
 from scipy.optimize import brute
