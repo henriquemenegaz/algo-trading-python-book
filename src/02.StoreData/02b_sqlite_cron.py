@@ -3,6 +3,7 @@ import sqlite3
 import pandas as pd
 import exchange_calendars as xcals
 from openbb import obb
+
 obb.user.preferences.output_type = "dataframe"
 
 
@@ -15,18 +16,21 @@ def get_stock_data(symbol, start_date=None, end_date=None):
         provider="yfinance",
     )
     data.reset_index(inplace=True)
-    data['symbol'] = symbol
+    data["symbol"] = symbol
     return data
 
+
 #################################
-def save_data_range(symbol, conn, start_date,end_date):
-    data = get_stock_data(symbol, start_date,end_date)
-    data.to_sql("stock_data",conn,if_exists="replace",index=False)
-    
+def save_data_range(symbol, conn, start_date, end_date):
+    data = get_stock_data(symbol, start_date, end_date)
+    data.to_sql("stock_data", conn, if_exists="replace", index=False)
+
+
 #################################
 def save_last_trading_session(symbol, conn, today):
     data = get_stock_data(symbol, today, today)
-    data.to_sql("stock_data",conn,if_exists="append",index=False)
+    data.to_sql("stock_data", conn, if_exists="append", index=False)
+
 
 #################################
 if __name__ == "__main__":
@@ -35,7 +39,7 @@ if __name__ == "__main__":
         symbol = argv[2]
         start_date = argv[3]
         start_date = argv[4]
-        save_data_range(symbol, conn, start_date=None,end_date=None)
+        save_data_range(symbol, conn, start_date=None, end_date=None)
         print(f"{symbol} saved between {start_date} and {start_date}")
     elif argv[1] == "last":
         symbol = argv[2]
